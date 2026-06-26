@@ -11,6 +11,7 @@ class Settings(BaseSettings):
 
     GEE_SERVICE_ACCOUNT: str = ""
     GEE_KEY_FILE: str = "service_account.json"
+    GEE_PROJECT_ID: str = ""
 
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
