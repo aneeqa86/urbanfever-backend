@@ -5,7 +5,8 @@ async def geocode_city(city: str) -> dict:
     params = {
         "q": city,
         "format": "json",
-        "limit": 1
+        "limit": 1,
+        "accept-language": "en"
     }
     headers = {"User-Agent": "UrbanFever/1.0"}
     async with httpx.AsyncClient() as client:
@@ -15,8 +16,9 @@ async def geocode_city(city: str) -> dict:
         raise ValueError(f"City '{city}' not found")
     result = data[0]
     bbox = result.get("boundingbox")
+    name = result["display_name"].split(",")[0].strip()
     return {
-        "name": result["display_name"],
+        "name": name,
         "lat": float(result["lat"]),
         "lon": float(result["lon"]),
         "bbox": [
