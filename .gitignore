@@ -32,3 +32,7 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets
+service_account.json
+*.key.json
