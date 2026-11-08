@@ -40,4 +40,4 @@ uvicorn app.main:app --reload --port 8000
 pytest tests/
 ```
 
-Deployment: see `../docs/DEPLOYMENT.md` (Google Cloud Run, keyless auth via the service identity).
+Deployment: free on Render via `render.yaml` (Docker, set `GEE_SERVICE_ACCOUNT_KEY` as a secret); Cloud Run also supported.

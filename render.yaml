@@ -1,0 +1,27 @@
+# Render Blueprint — free web service, no billing/card required.
+# Render dashboard → New → Blueprint → select this repo.
+services:
+  - type: web
+    name: urbanfever-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: WEB_CONCURRENCY
+        value: "1"              # free instance has 512 MB RAM
+      - key: GEE_PROJECT_ID
+        value: ee-aneeqaabrar
+      - key: ALLOWED_ORIGINS
+        value: '["https://urbanfever.vercel.app","http://localhost:3000","http://localhost:5173"]'
+      - key: ALLOWED_ORIGIN_REGEX
+        value: 'https://urbanfever(-[a-z0-9-]+)?\.vercel\.app'   # Vercel preview deployments
+      - key: GEE_SERVICE_ACCOUNT_KEY
+        sync: false             # paste the full service-account JSON key in the dashboard (secret)

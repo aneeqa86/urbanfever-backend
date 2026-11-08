@@ -8,7 +8,8 @@ class Settings(BaseSettings):
     VERSION: str = "0.2.0"
     API_V1_PREFIX: str = "/api/v1"
 
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
+    ALLOWED_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000", "https://urbanfever.vercel.app"]
+    ALLOWED_ORIGIN_REGEX: str = ""  # e.g. Vercel preview deployments
 
     # Earth Engine credentials — first match wins:
     #   1. GEE_SERVICE_ACCOUNT_KEY  (full JSON key content, for Render/Railway/etc.)

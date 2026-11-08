@@ -12,4 +12,4 @@ COPY app ./app
 
 # Credentials are NOT baked into the image: use Cloud Run's service identity,
 # or pass GEE_SERVICE_ACCOUNT_KEY (JSON content) as an environment secret.
-CMD exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 2 --timeout-keep-alive 650
+CMD exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers ${WEB_CONCURRENCY:-1} --timeout-keep-alive 650 --proxy-headers --forwarded-allow-ips "*"
