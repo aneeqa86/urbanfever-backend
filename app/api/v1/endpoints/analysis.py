@@ -7,6 +7,7 @@ instead of blocking the event loop.
 from typing import Optional
 
 import ee
+import google.auth.exceptions
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
@@ -75,6 +76,8 @@ def _run(fn, *args):
         msg = str(e)
         code = 429 if "Too many" in msg else 504 if "timed out" in msg.lower() else 502
         raise HTTPException(code, f"Earth Engine: {msg}")
+    except google.auth.exceptions.GoogleAuthError as e:
+        raise HTTPException(503, f"Earth Engine authentication failed (check the service-account key): {e}")
 
 
 @router.get("/overview", summary="LST per year, SUHI, ΔLST, histograms, data quality")

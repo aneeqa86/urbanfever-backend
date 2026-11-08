@@ -8,13 +8,13 @@ SCALE_M = 120
 KERNEL_RADIUS_PX = 5   # 600 m neighbourhood
 
 CLASSES = [
-    (3, "Hot spot (99 %)", "#b2182b"),
-    (2, "Hot spot (95 %)", "#ef8a62"),
-    (1, "Hot spot (90 %)", "#fddbc7"),
-    (0, "Not significant", "#3a3a44"),
-    (-1, "Cold spot (90 %)", "#d1e5f0"),
-    (-2, "Cold spot (95 %)", "#67a9cf"),
-    (-3, "Cold spot (99 %)", "#2166ac"),
+    (3, "Hot spot 99 %", "#e8412f"),
+    (2, "Hot spot 95 %", "#f58a5e"),
+    (1, "Hot spot 90 %", "#f9c3a6"),
+    (0, "Not significant", "#3a3545"),
+    (-1, "Cold spot 90 %", "#a9d6ea"),
+    (-2, "Cold spot 95 %", "#5aa9d6"),
+    (-3, "Cold spot 99 %", "#2a6fb8"),
 ]
 
 

@@ -120,10 +120,10 @@ def drivers(city: str, year: int, start_month: int | None, end_month: int | None
 CHANGE_CATEGORIES = [
     (1, "veg_to_built", "Vegetation → built-up", "#d7301f"),
     (2, "other_to_built", "Bare / other → built-up", "#fc8d59"),
-    (3, "veg_loss", "Vegetation loss (not built)", "#fdcc8a"),
-    (4, "veg_gain", "Vegetation gain", "#31a354"),
-    (5, "stable_built", "Stable built-up", "#7a7a85"),
-    (6, "stable_other", "Stable non-built", "#2b2b33"),
+    (3, "veg_loss", "Vegetation loss, not built", "#fdcc8a"),
+    (4, "veg_gain", "Greening", "#8fd694"),
+    (5, "stable_built", "Built-up, unchanged", "#6e6a78"),
+    (6, "stable_other", "Non-built, unchanged", "#4a4458"),
 ]
 NEW_BUILT_DELTA = 0.15
 VEG_NDVI = 0.3
@@ -183,7 +183,7 @@ def landchange(city: str, year1: int, year2: int, start_month: int | None, end_m
     if v2b["area_km2"] > 0.1 and v2b["mean_dlst"] is not None:
         rel = ""
         if stable["mean_dlst"] is not None:
-            rel = f" ({v2b['mean_dlst'] - stable['mean_dlst']:+.1f} °C relative to stable non-built land)"
+            rel = f" ({v2b['mean_dlst'] - stable['mean_dlst']:+.1f} °C relative to unchanged non-built land)"
         headline = (f"{v2b['area_km2']:.1f} km² of vegetation became built-up between {year1} and {year2}; "
                     f"it warmed by {v2b['mean_dlst']:+.1f} °C on average{rel}.")
     elif e1 == e2:

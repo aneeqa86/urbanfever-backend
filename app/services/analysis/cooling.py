@@ -66,9 +66,9 @@ def cooling(city: str, year: int, start_month: int | None, end_month: int | None
     return {
         "year": year,
         "season": season.as_dict(),
-        "mask_tile_url": tile_url(mask_img, {"min": 1, "max": 2, "palette": ["2b8cbe", "31a354"]}),
-        "mask_legend": [{"value": 2, "label": "Green space (trees, grass, mangroves)", "color": "#31a354"},
-                        {"value": 1, "label": "Water", "color": "#2b8cbe"}],
+        "mask_tile_url": tile_url(mask_img, {"min": 1, "max": 2, "palette": ["3b9cf0", "3fd17f"]}),
+        "mask_legend": [{"value": 2, "label": "Parks and trees", "color": "#3fd17f"},
+                        {"value": 1, "label": "Water", "color": "#3b9cf0"}],
         "green": _summarise(info["green"].get("groups", [])),
         "water": _summarise(info["water"].get("groups", [])),
         "params": {

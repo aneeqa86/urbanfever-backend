@@ -51,14 +51,9 @@ def initialize_gee():
 
 # ─────────────────────────────── constants ────────────────────────────────
 
-LST_PALETTE = [
-    "040274", "0502a3", "0502ce", "0602e8", "1001e3", "1e01d9", "3201d2", "4f01c9",
-    "6e01be", "8e01b4", "ae01a9", "ce019e", "ee0192", "f90e82", "f91d72", "f92b62",
-    "f93952", "f94742", "f95532", "f96322", "f97112", "f97f02", "f98e00", "f99c00",
-    "f9aa00", "f9b800", "f9c600", "f9d400",
-]
-DIVERGING_PALETTE = ["2166ac", "4393c3", "92c5de", "d1e5f0", "f7f7f7", "fddbc7", "f4a582", "d6604d", "b2182b"]
-NDVI_PALETTE = ["8c510a", "bf812d", "dfc27d", "f6e8c3", "c7e9c0", "74c476", "31a354", "006d2c"]
+LST_PALETTE = ["000004", "1f0c48", "550f6d", "88226a", "ba3655", "e35933", "f98c0a", "f9c932", "fcffa4"]  # inferno, matches design tokens
+DIVERGING_PALETTE = ["2166ac", "67a9cf", "d1e5f0", "f7f7f7", "fddbc7", "ef8a62", "b2182b"]
+NDVI_PALETTE = ["8c6a45", "e7d9a2", "d9f0a3", "78c679", "31a354", "006837"]
 NDBI_PALETTE = ["1a9850", "91cf60", "d9ef8b", "fee08b", "fc8d59", "d73027", "7f0000"]
 MNDWI_PALETTE = ["a6611a", "dfc27d", "f5f5f5", "80cdc1", "018571", "08306b"]
 
